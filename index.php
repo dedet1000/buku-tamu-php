@@ -2,18 +2,17 @@
 include 'koneksi.php';
 
 if (isset($_POST['kirim'])) {
-    $nama  = htmlspecialchars($_POST['nama']);
-    $pesan = htmlspecialchars($_POST['pesan']);
+    $nama  = $_POST['nama'];
+    $pesan = $_POST['pesan'];
 
     mysqli_query($koneksi, "INSERT INTO tamu (nama, pesan) VALUES ('$nama', '$pesan')");
 }
 ?>
 
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Buku Tamu Digital</title>
+    <title>Buku Tamu</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
