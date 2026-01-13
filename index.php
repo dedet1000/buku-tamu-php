@@ -21,7 +21,6 @@ if (isset($_POST['kirim'])) {
 
     <header class="header">
         <h1>Buku Tamu Digital</h1>
-        <p class="subtitle">Project PHP & MySQL Sederhana</p>
     </header>
 
     <!-- FORM -->
@@ -49,14 +48,14 @@ if (isset($_POST['kirim'])) {
 
         <div class="messages-list">
         <?php
-        $data = mysqli_query($koneksi, "SELECT * FROM tamu ORDER BY id DESC");
+        $data = mysqli_query($koneksi, "SELECT * FROM tamu ORDER BY ID DESC");
 
         while ($row = mysqli_fetch_assoc($data)) {
         ?>
             <div class="message-card">
                 <h3><?= $row['nama']; ?></h3>
                 <p><?= nl2br($row['pesan']); ?></p>
-                <a href="hapus.php?id=<?= $row['ID']; ?>" 
+                <a href="hapus.php?ID=<?= $row['ID']; ?>" 
                    class="delete-btn"
                    onclick="return confirm('Yakin ingin menghapus pesan?')">
                    Hapus
@@ -67,8 +66,7 @@ if (isset($_POST['kirim'])) {
     </section>
 
     <footer class="footer">
-        <p>© 2024 Buku Tamu Digital • PHP & MySQL</p>
-        <p style="font-size: 0.8rem; color: #a0aec0; margin-top: 5px;">Dibuat untuk presentasi tugas sekolah</p>
+        <p>©Buku Tamu Digital</p>
     </footer>
 
 </div>
